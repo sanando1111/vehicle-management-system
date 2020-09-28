@@ -3,6 +3,8 @@ package com.vms.demo;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -13,18 +15,19 @@ import javax.persistence.Table;
 public class Vehicle {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "vehicleid")
-	private String vehicleId;
+	private int vehicleId;
 	
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "detail_id", referencedColumnName = "id")
 	private VehicleDetail vehicleDetails;
 	
 	
-	public String getVehicleId() {
+	public int getVehicleId() {
 		return vehicleId;
 	}
-	public void setVehicleId(String vehicleId) {
+	public void setVehicleId(int vehicleId) {
 		this.vehicleId = vehicleId;
 	}
 	public VehicleDetail getVehicleDetails() {
