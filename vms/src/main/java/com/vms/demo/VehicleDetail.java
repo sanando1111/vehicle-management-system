@@ -1,17 +1,50 @@
 package com.vms.demo;
 
-public class VehicleDetails {
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="VEHICLE_DETAIL")
+public class VehicleDetail {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
+	private int id;
+	
+	@Column(name = "make")
     private String make;
+	@Column(name = "model")
     private String model;
+	@Column(name = "modelyear")
     private String modelYear;
+	@Column(name = "bodystyle")
     private String  bodyStyle;
+	@Column(name = "engine")
     private String engine;
+	@Column(name = "drivetype")
     private String drivetype;
+	@Column(name = "color")
     private String color;
-    private String mpg;   
+	@Column(name = "mpg")
+    private String mpg;  
+    
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "feature_id", referencedColumnName = "id")
     private VehicleFeature vehicleFeatues;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "price_id", referencedColumnName = "id")
     private VehiclePrice   vehiclePrice;
+    
+    
 	public VehicleFeature getVehicleFeatues() {
 		return vehicleFeatues;
 	}

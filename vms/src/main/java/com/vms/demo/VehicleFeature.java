@@ -2,21 +2,29 @@ package com.vms.demo;
 
 import java.util.List;
 
-public class VehicleFeature {	
-	private List<String> interiors;
-	private List<String> exteriors;
-	public List<String> getInteriors() {
-		return interiors;
-	}
-	public void setInteriors(List<String> interiors) {
-		this.interiors = interiors;
-	}
-	public List<String> getExteriors() {
-		return exteriors;
-	}
-	public void setExteriors(List<String> exteriors) {
-		this.exteriors = exteriors;
-	}
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="VEHICLE_FEATURES")
+public class VehicleFeature {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
+	private int feature_id;
+	
+	@Column(name = "interiors")
+	private String interiors;
+	
+	@Column(name = "exteriors")
+	private String exteriors;
+	
 	
 	
 
