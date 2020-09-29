@@ -23,7 +23,7 @@ public class VehiclePrice {
 	private String savings;
 
 	@Column(name = "finalPrice")
-	private String finalPrice;
+	private long finalPrice;
 
 	public String getMsrp() {
 		return msrp;
@@ -41,11 +41,11 @@ public class VehiclePrice {
 		this.savings = savings;
 	}
 
-	public String getFinalPrice() {
+	public long getFinalPrice() {
 		return finalPrice;
 	}
 
-	public void setFinalPrice(String finalPrice) {
+	public void setFinalPrice(long finalPrice) {
 		this.finalPrice = finalPrice;
 	}
 

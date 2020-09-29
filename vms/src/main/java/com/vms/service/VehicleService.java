@@ -32,4 +32,14 @@ public class VehicleService {
 		return vdao.save(vehicles);
 	}
 
+	public List<Vehicle> getVehicleByPrice(long from, long to) {
+		// TODO Auto-generated method stub
+		return vdao.getVehicleByPrice(from,to);
+	}
+
+	public List<Vehicle> getVehicleByFeatures(String exterior, String interior) {
+		// TODO Auto-generated method stub
+		return vdao.getVehicleByFeatures(exterior,interior);
+	}
+
 }

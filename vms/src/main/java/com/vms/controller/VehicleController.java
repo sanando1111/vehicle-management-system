@@ -35,6 +35,17 @@ public class VehicleController {
 
 	}
 
+	@GetMapping("/getVehiclePrice/{from}/{to}")
+	public List<Vehicle> getVehicleByPrice(@PathVariable("from") long from, @PathVariable("to") long to) {
+		return vehicleService.getVehicleByPrice(from, to);
+	}
+
+	@GetMapping("/getVehicleByFeatures/{exterior}/{interior}")
+	public List<Vehicle> getVehicleByFeatures(@PathVariable("exterior") String exterior,
+			@PathVariable("interior") String interior) {
+		return vehicleService.getVehicleByFeatures(exterior,interior);
+	}
+
 	@PostMapping("/vehicleInformation/submitVehicle")
 	public ResponseMessage createVehicles(@Valid @RequestBody List<Vehicle> vehicles) {
 		vehicleService.save(vehicles);

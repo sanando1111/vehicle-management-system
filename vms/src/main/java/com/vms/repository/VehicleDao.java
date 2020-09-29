@@ -30,4 +30,14 @@ public class VehicleDao {
 		return vRepository.saveAll(vehicles);
 	}
 
+	public List<Vehicle> getVehicleByPrice(long from, long to) {
+		// TODO Auto-generated method stub
+		return vRepository.findByPrice(from,to);
+	}
+
+	public List<Vehicle> getVehicleByFeatures(String exterior, String interior) {
+		// TODO Auto-generated method stub
+		return vRepository.findByFeatures(exterior,interior);
+	}
+
 }
