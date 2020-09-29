@@ -17,5 +17,12 @@ public class VehicleDao {
 		
 		
 	}
+	
+	public List<Vehicle> getAllVehiclesByModelname(String modelName)
+	{
+		return vRepository.findByModelName(modelName);
+		
+		
+	}
 
 }

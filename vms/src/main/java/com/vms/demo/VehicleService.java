@@ -16,5 +16,10 @@ public class VehicleService {
 		return vdao.getAllVehicles();
 
 	}
+	
+	public List<Vehicle> getVehiclesByModelname(String modelName) {
+		return vdao.getAllVehiclesByModelname(modelName);
+
+	}
 
 }
