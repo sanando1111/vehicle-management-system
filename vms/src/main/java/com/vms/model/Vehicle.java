@@ -15,7 +15,6 @@ import javax.persistence.Table;
 public class Vehicle {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "vehicleid")
 	private int vehicleId;
 	
