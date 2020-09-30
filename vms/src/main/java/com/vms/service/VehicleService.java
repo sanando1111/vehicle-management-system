@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.vms.exception.ProcessingException;
 import com.vms.model.Vehicle;
 import com.vms.repository.VehicleDao;
 
@@ -37,8 +39,11 @@ public class VehicleService {
 		return vdao.getVehicleByPrice(from,to);
 	}
 
-	public List<Vehicle> getVehicleByFeatures(String exterior, String interior) {
-		// TODO Auto-generated method stub
+	public List<Vehicle> getVehicleByFeatures(String exterior, String interior) throws ProcessingException{
+		if(exterior.length()<3||interior.length()<3)
+		{
+			throw new ProcessingException("Interior or exterior value must be greater than or equal to three characters");
+		}
 		return vdao.getVehicleByFeatures(exterior,interior);
 	}
 
