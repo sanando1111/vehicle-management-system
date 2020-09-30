@@ -2,16 +2,16 @@ package com.vms.service;
 
 import java.util.List;
 
-import javax.validation.Valid;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
+import org.springframework.stereotype.Repository;
 import com.vms.model.Vehicle;
 import com.vms.repository.VehicleDao;
 
 
-@Service
+
+@Repository
 public class VehicleService {
 
 	@Autowired

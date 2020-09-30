@@ -18,26 +18,26 @@ public class VehiclePrice {
 	private int id;
 
 	@Column(name = "msrp")
-	private String msrp;
+	private long msrp;
 	@Column(name = "savings")
-	private String savings;
+	private long savings;
 
 	@Column(name = "finalPrice")
 	private long finalPrice;
 
-	public String getMsrp() {
+	public long getMsrp() {
 		return msrp;
 	}
 
-	public void setMsrp(String msrp) {
+	public void setMsrp(long msrp) {
 		this.msrp = msrp;
 	}
 
-	public String getSavings() {
+	public long getSavings() {
 		return savings;
 	}
 
-	public void setSavings(String savings) {
+	public void setSavings(long savings) {
 		this.savings = savings;
 	}
 

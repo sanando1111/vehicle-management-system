@@ -42,7 +42,12 @@ public class VehicleController {
 
 	@GetMapping("/getVehicleByFeatures/{exterior}/{interior}")
 	public List<Vehicle> getVehicleByFeatures(@PathVariable("exterior") String exterior,
-			@PathVariable("interior") String interior) {
+			@PathVariable("interior") String interior) throws Exception {
+		
+		if(exterior.length()<3||interior.length()<3)
+		{
+			throw new Exception("Interior or exterior value must be greater than or equal to three characters");
+		}
 		return vehicleService.getVehicleByFeatures(exterior,interior);
 	}
 
